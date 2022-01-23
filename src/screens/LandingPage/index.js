@@ -1,13 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+
+
+const appData = [
+    {
+        id: 1,
+        title: `The computers before screens`,
+        content: `learn why there is so many "prints" in programming languages and how our lives are a little easy and cheap now...`,
+    },
+    {
+        id: 2,
+        title: `Why Machintosh was revolucionary`,
+        content: `where "Windows" got it's name and why Steve Jobs where a genius...`,
+    },
+    {
+        id: 3,
+        title: `The revolution data`,
+        content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
+    },
+]
 
 export default function LandingPage() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="auto" />
         <Text>This is the landing page!</Text>
         <Text>Lets code!</Text>
-        <StatusBar style="auto" />
-      </View>
+      </SafeAreaView>
     );
   }
   
