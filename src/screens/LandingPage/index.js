@@ -36,6 +36,7 @@ export default function LandingPage() {
               <Posts {...item} />
             )
           }
+          keyExtractor={({id}) => String(id)}
           /> 
       </SafeAreaView>
     );
