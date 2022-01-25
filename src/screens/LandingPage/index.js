@@ -1,6 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import React from 'react';
 
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, SafeAreaView, FlatList } from 'react-native';
+
+import Posts from '../Posts'
 
 const appData = [
     {
@@ -23,9 +26,17 @@ const appData = [
 export default function LandingPage() {
     return (
       <SafeAreaView style={styles.container}>
-        <StatusBar style="auto" />
+        {/* <StatusBar style="auto" /> */}
         <Text>This is the landing page!</Text>
         <Text>Lets code!</Text>
+          <FlatList 
+          data={appData}
+          renderItem={
+            ({item}) => (
+              <Posts {...item} />
+            )
+          }
+          /> 
       </SafeAreaView>
     );
   }
