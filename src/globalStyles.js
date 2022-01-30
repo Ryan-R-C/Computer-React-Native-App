@@ -13,7 +13,7 @@ import {Dimensions, StyleSheet} from 'react-native';
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
 
-export default globalStyles = StyleSheet.create({
+const globalStyles = StyleSheet.create({
     fill: {
         flex: 1,
     },
@@ -22,25 +22,28 @@ export default globalStyles = StyleSheet.create({
     },
     Globalbox: {
         alignSelf: 'center',
+        alignItems: 'center',
         backgroundColor: '#0E1220',
         flex: 1,
+        width:'100%',
         
     },
     subBox: {
-        flex: 1,
         alignSelf: 'center',
+        flex: 1,
 
     },
     postBox: {
         backgroundColor: '#101828',
         borderRadius: 3,
         display: 'flex',
-        padding: 0.06 * windowWidth,
+        paddingTop: 0.05 * windowWidth,
+        paddingLeft: 0.05 * windowWidth,
+        paddingBottom: 0.05 * windowWidth,
+        paddingRight: 0.05 * windowWidth,
         borderRadius: 10,
-        marginVertical: 0.018 * windowHeight,
         marginHorizontal: 0.05 * windowWidth,
-
-        
+        marginVertical: 0.018 * windowHeight,
         shadowColor:'#171717', 
         shadowOffset: {width:-2, height: 4},
         shadowOpacity: 0.2,
@@ -54,20 +57,23 @@ export default globalStyles = StyleSheet.create({
         paddingBottom: 0,
         textAlign: 'center',
         color: 'white',
-        textShadowColor: 'rgba(255,0,255,0.85) !important',
+        textShadowColor: 'rgba(255,0,255,0.85)',
         textShadowOffset: {width: 1, height: 1},
         textShadowRadius: 5,
-
-
         fontSize: 26,
     },
     
     title: {
         color: '#B7BABE',
-        fontSize: 26,
+        fontSize: 18,
         textAlign: 'center',
-        padding: 0.01 * windowHeight
     },
+    text: {
+        color: '#B7BABE',
+        fontSize: 16,
+        textAlign: 'justify',
+        padding: 0.01 * windowHeight
+    }
 })
 
 export const colors = {
@@ -80,3 +86,5 @@ export const colors = {
     defaultShadowColor: '#0000004d',
     defaultShadowDimensions: '0 2 4',
 }
+
+export default globalStyles
