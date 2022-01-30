@@ -1,7 +1,14 @@
 import React from 'react';
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, FlatList } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, FlatList, KeyboardAvoidingView, Platform } from 'react-native';
+
+
+import globalStyles from '../../globalStyles';
+
+import styles from './styles';
+
+import Comment from '../../components/Comment'
 
 import Posts from '../Posts'
 
@@ -21,32 +28,62 @@ const appData = [
         title: `The revolution data`,
         content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
     },
+    {
+      id: 4,
+      title: `The revolution data`,
+      content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
+    },
+    {
+      id: 5,
+      title: `The revolution data`,
+      content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
+    },
+    {
+      id: 6,
+      title: `The revolution data`,
+      content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
+    },
+    {
+      id: 7,
+      title: `The revolution data`,
+      content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
+    },
+    {
+      id: 8,
+      title: `The revolution data`,
+      content: `Why so many jobs in nowadays are being extinct and so much more are being created...`,
+    },
+
 ]
 
 export default function LandingPage() {
     return (
-      <SafeAreaView style={styles.container}>
-        {/* <StatusBar style="auto" /> */}
-        <Text>This is the landing page!</Text>
-        <Text>Lets code!</Text>
+      <SafeAreaView 
+      style={
+        globalStyles.subBox
+      }
+      >
+        <Text
+        style={
+          styles.text,
+          globalStyles.mainTitle
+        }
+        >This is the landing page!</Text>
+        <Text
+          style={styles.text}
+        >Lets code!</Text>
+
           <FlatList 
           data={appData}
           renderItem={
             ({item}) => (
               <Posts {...item} />
-            )
-          }
-          keyExtractor={({id}) => String(id)}
-          /> 
+              )
+            }
+            keyExtractor={({id}) => String(id)}
+              />
+
       </SafeAreaView>
     );
   }
   
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
