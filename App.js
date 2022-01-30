@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 
 import globalStyles from './src/globalStyles';
 
@@ -18,6 +18,11 @@ export default function App() {
       'PoppinsRegular': Poppins_400Regular, 
       'PoppinsBold': Poppins_700Bold 
     })
+
+  if(!fontsLoaded){
+    return <View/>
+  }
+
   return (
     <SafeAreaView
     style={
