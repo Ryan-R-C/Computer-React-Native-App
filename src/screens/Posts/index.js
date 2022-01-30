@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
+import { Image, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 
 import globalStyles from '../../globalStyles';
 
 import Comment from '../../components/Comment';
 import TextFormatedRegular from '../../components/TextFormated';
+import styles from './styles';
 
 
-export default function Posts({ id, title, summary}) {
+export default function Posts({ id, title, summary, media}) {
     return (
       <SafeAreaView
       style={
@@ -33,6 +33,9 @@ export default function Posts({ id, title, summary}) {
           { title }
         </TextFormatedRegular>
         
+      <Image source={{uri: media}}
+       style={styles.image} />
+
         <TextFormatedRegular
           style={
             globalStyles.text
