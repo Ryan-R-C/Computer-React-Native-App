@@ -56,7 +56,7 @@ export default function LandingPage() {
               <Posts {...item} />
               )
             }
-            keyExtractor={({id}) => String(id)}
+            keyExtractor={({_id}) => String(_id)}
             // ListHeaderComponent={
               //   () => ()}
               />
