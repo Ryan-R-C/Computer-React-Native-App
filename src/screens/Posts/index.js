@@ -1,21 +1,42 @@
 import React from 'react';
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, FlatList } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 
+import styles from './styles';
+import globalStyles from '../../globalStyles';
+
+import Comment from '../../components/Comment';
 
 export default function Posts({ id, title, content}) {
     return (
-      <SafeAreaView>
-      <Text>
+      <SafeAreaView
+      style={
+          globalStyles.postBox
+      }
+      >
+      <Text
+      style={
+        styles.text
+    }
+      >
         { id }
       </Text>
-      <Text>
+      <Text
+        style={
+            styles.text
+        }
+      >
         { title }
       </Text>
-      <Text>
+      <Text
+        style={
+        styles.text
+        }
+      >
         { content }
       </Text>
+      {/* <Comment /> */}
       </SafeAreaView>
         )
     }
