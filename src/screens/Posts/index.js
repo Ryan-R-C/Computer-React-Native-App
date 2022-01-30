@@ -1,42 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 
-import styles from './styles';
 import globalStyles from '../../globalStyles';
 
 import Comment from '../../components/Comment';
+import TextFormatedRegular from '../../components/TextFormated';
 
-export default function Posts({ id, title, content}) {
+
+export default function Posts({ id, title, summary}) {
     return (
       <SafeAreaView
       style={
           globalStyles.postBox
       }
       >
-      <Text
-      style={
-        styles.text
-    }
-      >
-        { id }
-      </Text>
-      <Text
+
+        <TextFormatedRegular
         style={
-            styles.text
-        }
-      >
-        { title }
-      </Text>
-      <Text
-        style={
-        styles.text
-        }
-      >
-        { content }
-      </Text>
-      {/* <Comment /> */}
+          globalStyles.text
+      }
+        >
+          { id }
+        </TextFormatedRegular>
+
+        <TextFormatedRegular
+          style={
+            globalStyles.title
+          }
+        >
+          { title }
+        </TextFormatedRegular>
+        
+        <TextFormatedRegular
+          style={
+            globalStyles.text
+          }
+        >
+          { summary }
+        </TextFormatedRegular>
+        {/* <Comment /> */}
+
+
       </SafeAreaView>
         )
     }
