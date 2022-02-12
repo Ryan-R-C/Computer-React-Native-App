@@ -18,10 +18,11 @@ import Posts from '../Posts'
 import TextFormatedRegular from '../../components/TextFormated';
 import newsData            from '../../service/newsData';
 import getLang             from '../../utils/getLang';
+import Search              from '../../components/Search';
 
 export default function LandingPage() {
-  const [newsDatas, setNewsDatas] = useState([])
-  const [lang, setLang] = useState('')
+  const [newsDatas,   setNewsDatas] = useState([])
+  const [lang,        setLang] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
 
   const loadNews = async (lang) => {
@@ -45,43 +46,15 @@ export default function LandingPage() {
       >
         <StatusBar style="none" />
         
-      <View
-        style={globalStyles.search}
-      >
-        <View
-          style={globalStyles.searchIcon}
-          onClick={
-            (e) => console.log(searchQuery)
+      <Search
+        setStateSearch={setSearchQuery}
+        stateSearch={searchQuery}
+        actionOnSubmit={
+          () => {
+            console.log(searchQuery)
           }
-        >
-
-        <AntDesign name="search1" size={24} color="white" />
-        
-        </View>
-        <TextInput 
-            keyboardType='default'
-            selectTextOnFocus
-            style={
-              // Platform.select({
-              //   web: {
-              //     outlineStyle: 'none',
-              //   }})
-              //   ,
-                globalStyles.searchInput
-            }
-
-            onChangeText={text => setSearchQuery(text)}
-            defaultValue={searchQuery}
-            onSubmitEditing={
-              () => {
-                console.log("enter hjahahahahahhahah")
-              }
-            }
-
-
-          />
-      </View>
-
+        }
+      />
 
         {/* <KeyboardAvoidingView
         behavior={
