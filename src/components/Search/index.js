@@ -1,5 +1,5 @@
 import { Text,  TextInput, View, Keyboard } from 'react-native';
-import globalStyles from '../../globalStyles';
+import styles from './styles';
 import { AntDesign } from '@expo/vector-icons'; 
 import React, { useEffect, useState } from 'react';
 
@@ -9,10 +9,10 @@ export default function Search({ setStateSearch, stateSearch, actionOnSubmit }){
 
     return (
     <View
-        style={globalStyles.search}
+        style={styles.search}
     >
         <View
-            style={globalStyles.searchIcon}
+            style={styles.searchIcon}
             onClick={
             () => actionOnSubmit()
             }
@@ -28,7 +28,7 @@ export default function Search({ setStateSearch, stateSearch, actionOnSubmit }){
                 //     outlineStyle: 'none',
                 //   }})
                 //   ,
-                globalStyles.searchInput
+                styles.searchInput
             }
 
             onChangeText={text => setStateSearch(text)}
