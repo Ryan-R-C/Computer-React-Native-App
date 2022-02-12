@@ -34,9 +34,7 @@ export default function Search({ setStateSearch, stateSearch, actionOnSubmit }){
             onChangeText={text => setStateSearch(text)}
             defaultValue={stateSearch}
             onSubmitEditing={
-                () => {
-                console.log("enter hjahahahahahhahah")
-                }
+                () => actionOnSubmit()
             }
 
 
