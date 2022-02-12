@@ -32,6 +32,9 @@ export default function LandingPage() {
   }
 
   const searchNews = async (lang, search) => {
+    if(!search){
+      loadNews(lang)
+    }
     let newsFromUserSearch = await newsSearch(lang, search)
     setNewsDatas(newsFromUserSearch)
   }
