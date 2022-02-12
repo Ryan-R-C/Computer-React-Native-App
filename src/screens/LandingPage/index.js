@@ -19,6 +19,7 @@ import TextFormatedRegular from '../../components/TextFormated';
 import newsData            from '../../service/newsData';
 import getLang             from '../../utils/getLang';
 import Search              from '../../components/Search';
+import newsSearch          from '../../service/newsSearch';
 
 export default function LandingPage() {
   const [newsDatas,   setNewsDatas] = useState([])
@@ -28,7 +29,11 @@ export default function LandingPage() {
   const loadNews = async (lang) => {
     const data = await newsData(lang)
       setNewsDatas(data)
-      console.log(data)
+  }
+
+  const searchNews = async (lang, search) => {
+    let newsFromUserSearch = await newsSearch(lang, search)
+    setNewsDatas(newsFromUserSearch)
   }
 
   useEffect(
@@ -38,6 +43,7 @@ export default function LandingPage() {
       loadNews(userLanguage)
     }, []
   )
+
     return (
       <SafeAreaView 
       style={
@@ -51,7 +57,7 @@ export default function LandingPage() {
         stateSearch={searchQuery}
         actionOnSubmit={
           () => {
-            console.log(searchQuery)
+            searchNews(lang, searchQuery)
           }
         }
       />
