@@ -12,6 +12,8 @@ import {
   Poppins_700Bold 
 } from '@expo-google-fonts/poppins'
 
+import Routes from './src/Routes';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
