@@ -8,6 +8,7 @@ What was done in this project?
  - Used React Navigation
  - Has multiple pages
  - Intuitive Design
+ - Use Expo!
 
 
 
