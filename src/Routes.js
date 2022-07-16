@@ -28,20 +28,24 @@ export default function Routes(){
             <Stack.Navigator
                 headerMode='none'
                 initialRouteName={LandingPage}
+                screenOptions={{
+                    headerShown: false
+                  }}
                 >
                 <Stack.Screen
                     name="LandingPage"
                     component={LandingPage}
-                    // style={{width: '100%',} }
+                    screenOptions={{
+                        headerShown: false
+                      }}
                 />
-                {/* <Stack.Screen
-                name="Posts"
-                component={Posts}
-                /> */}
 
                 <Stack.Screen   
                     name="SinglePost"
                     component={SinglePost}
+                    screenOptions={{
+                        headerShown: false
+                      }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
