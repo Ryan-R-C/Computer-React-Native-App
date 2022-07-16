@@ -1,72 +1,67 @@
 import React from 'react';
 import { Linking, TouchableOpacity, View } from 'react-native';
 
-import { Image,  SafeAreaView  } from 'react-native';
-import { AntDesign, Entypo } from '@expo/vector-icons'; 
+import { Image, SafeAreaView } from 'react-native';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 import globalStyles from '../../globalStyles';
 
 import TextFormatedRegular from '../../components/TextFormated';
 import styles from './styles';
 
 
-export default function Posts({ title, media, link  }) {
-    return (
-      <SafeAreaView
+export default function Posts({ title, media, link }) {
+  return (
+    <SafeAreaView
       onPress={() => Linking.canOpenURL('http://google.com')}
       style={
-          globalStyles.postBox
+        globalStyles.postBox
       }
-      >
+    >
 
       <TouchableOpacity
-      onPress={() => Linking.openURL(link)}
+        onPress={() => Linking.openURL(link)}
       >
-        <Image source={{uri: media}}
-         style={styles.image}
-         />
+        <Image source={{ uri: media }}
+          style={styles.image}
+        />
       </TouchableOpacity>
-     <View
-     style={
-      globalStyles.containerTextPostBox
-    }
-     >
-      <TextFormatedRegular
+      <View
         style={
-          globalStyles.title
+          globalStyles.containerTextPostBox
         }
       >
-        { title }
-      </TextFormatedRegular>
-     </View>
-
-      <TextFormatedRegular
+        <TextFormatedRegular
           style={
-            globalStyles.text
+            styles.newsTitle
           }
         >
-        <View
-        style={styles.actionsContainer} 
-        >
-          <View
-          style={styles.iconsContainer}
-          >
-            <TouchableOpacity style={styles.icon}>
-              <AntDesign  name="hearto" size={24} color="white" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.icon}>
-              <AntDesign  name="sharealt" size={24} color="white" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.lastIcon}>
-              <Entypo  name="dots-three-vertical" size={24} color="white" />
-            </TouchableOpacity>
-          
-          </View>
-        </View>
+          {title}
         </TextFormatedRegular>
+      </View>
+
+      <View
+        style={styles.actionsContainer}
+      >
+        <View
+          style={styles.iconsContainer}
+        >
+          {/* Function not avaliable! */}
+          {/* <TouchableOpacity style={styles.icon}>
+              <AntDesign  name="hearto" size={24} color="white" />
+            </TouchableOpacity> */}
+
+          <TouchableOpacity style={styles.icon}>
+            <AntDesign name="sharealt" size={24} color="white" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.lastIcon}>
+            <Entypo name="dots-three-vertical" size={24} color="white" />
+          </TouchableOpacity>
+
+        </View>
+      </View>
 
 
-      </SafeAreaView>
-        )
-    }
+    </SafeAreaView>
+  )
+}
