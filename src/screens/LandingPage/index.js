@@ -1,38 +1,41 @@
+//react and dependencies
 import React, { useEffect, useState } from 'react';
-
+import { SafeAreaView, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { Text, SafeAreaView, FlatList, Platform, TextInput, View, Keyboard } from 'react-native';
 
-import { AntDesign } from '@expo/vector-icons'; 
-
-
-//  AiOutlineSearch
-// import { FaSearch } from 'react-icons/fa';
-
+//styles
 import globalStyles from '../../globalStyles';
 
-import Comment from '../../components/Comment'
+//service
+import newsData from '../../service/newsData';
+import newsSearch from '../../service/newsSearch';
 
+//utils
+import getLang from '../../utils/getLang';
+
+
+//components
 import Posts from '../Posts'
+import Search from '../../components/Search';
 
-import TextFormatedRegular from '../../components/TextFormated';
-import newsData            from '../../service/newsData';
-import getLang             from '../../utils/getLang';
-import Search              from '../../components/Search';
-import newsSearch          from '../../service/newsSearch';
+{/*
+It is possible to get the os and use it as a condition!
+  Platform.OS == "ios" ? "padding" : "height"
+*/}
+
 
 export default function LandingPage() {
-  const [newsDatas,   setNewsDatas] = useState([])
-  const [lang,        setLang] = useState('')
+  const [newsDatas, setNewsDatas] = useState([])
+  const [lang, setLang] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
 
   const loadNews = async (lang) => {
     const data = await newsData(lang)
-      setNewsDatas(data)
+    setNewsDatas(data)
   }
 
   const searchNews = async (lang, search) => {
-    if(!search){
+    if (!search) {
       loadNews(lang)
     }
     let newsFromUserSearch = await newsSearch(lang, search)
@@ -47,14 +50,14 @@ export default function LandingPage() {
     }, []
   )
 
-    return (
-      <SafeAreaView 
+  return (
+    <SafeAreaView
       style={
         globalStyles.subBox
       }
-      >
-        <StatusBar style="none" />
-        
+    >
+      <StatusBar style="none" />
+
       <Search
         setStateSearch={setSearchQuery}
         stateSearch={searchQuery}
@@ -65,26 +68,17 @@ export default function LandingPage() {
         }
       />
 
-        {/* <KeyboardAvoidingView
-        behavior={
-          Platform.OS == "ios" ? "padding" : "height"
-        }
-        // style={globalStyles.fill}
-        > */}
 
-          <FlatList 
-          data={newsDatas}
-          renderItem={
-            ({item}) => (
-              <Posts {...item} />
-              )
-            }
-            keyExtractor={({_id}) => String(_id)}
-            // ListHeaderComponent={
-              //   () => ()}
-              />
-          {/* </KeyboardAvoidingView> */}
-      </SafeAreaView>
-    );
-  }
-  
+      <FlatList
+        data={newsDatas}
+        renderItem={
+          ({ item }) => (
+            <Posts {...item} />
+          )
+        }
+        keyExtractor={({ _id }) => String(_id)}
+      />
+    </SafeAreaView>
+  );
+}
+
