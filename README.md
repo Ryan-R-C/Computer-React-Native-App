@@ -12,7 +12,7 @@ What was done in this project?
  - Multiplatform app;
  - Uses Native function to indentify the user's language and filter the news with it;
  - Uses FlatList to display mutliple components;
- - Uswes Expo!
+ - Uses Expo!
 
 
 
