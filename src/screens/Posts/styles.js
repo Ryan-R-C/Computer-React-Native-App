@@ -1,9 +1,6 @@
 
 
-import {StyleSheet, TouchableOpacity} from 'react-native';
-
-
-
+import { StyleSheet } from 'react-native';
 import { colors } from '../../globalStyles';
 
 
@@ -12,18 +9,25 @@ const styles = StyleSheet.create({
         backgroundColor: colors.secondBackgroundColor,
     },
     image: {
-        width: '100%',
-        height: 300,
-        
         borderRadius: 5,
-        // marginVertical: 10,
-        // borderRadius: 10
+        height: 300,
+        width: '100%',
+    },
+
+    newsTitle:{
+        paddingHorizontal: 20,
+        textAlign: "left",
+        color: '#B7BABE',
+        fontSize: 20,
+
     },
 
     actionsContainer:{
         display: 'flex',
         flexDirection: 'row-reverse',
-        paddingBottom: 20,  
+        paddingHorizontal: 10,
+        paddingBottom: 20,
+
         
     },
 
@@ -36,13 +40,13 @@ const styles = StyleSheet.create({
 
     icon:{
         paddingRight: 20,
+        // on mobile devices the cursos does not work, it crashes the metro!
         // cursor: 'pointer'
         
     },
 
     lastIcon:{
         paddingRight: 0,
-        // cursor: 'pointer'
     }
 
 
