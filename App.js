@@ -26,13 +26,6 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView
-    style={
-      globalStyles.Globalbox
-    }
-    >
-      <LandingPage
-      />
-    </SafeAreaView>
+    <Routes />
   );
 }
