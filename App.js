@@ -1,9 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View } from 'react-native';
-
-import globalStyles from './src/globalStyles';
-
-import LandingPage from './src/screens/LandingPage'
+import { View } from 'react-native';
 
 
 import { 
