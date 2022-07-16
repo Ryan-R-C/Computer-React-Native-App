@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react';
 
 
 export default function Search({ setStateSearch, stateSearch, actionOnSubmit }){
-    // const [searchQuery, setSearchQuery] = useState('')
 
     return (
     <View
