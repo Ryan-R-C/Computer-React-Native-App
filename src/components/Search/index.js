@@ -1,4 +1,4 @@
-import { Text,  TextInput, View, Keyboard } from 'react-native';
+import { Text,  TextInput, View, Keyboard, Platform } from 'react-native';
 import styles from './styles';
 import { AntDesign } from '@expo/vector-icons'; 
 import React, { useEffect, useState } from 'react';
@@ -22,13 +22,14 @@ export default function Search({ setStateSearch, stateSearch, actionOnSubmit }){
         <TextInput 
             keyboardType='default'
             selectTextOnFocus
-            style={
-                // Platform.select({
-                //   web: {
-                //     outlineStyle: 'none',
-                //   }})
-                //   ,
+            style={[
+                Platform.select({
+                  web: {
+                    outlineStyle: 'none',
+                  }})
+                  ,
                 styles.searchInput
+            ]
             }
 
             onChangeText={text => setStateSearch(text)}
