@@ -13,12 +13,38 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: 200,
+        height: 300,
         
-        borderRadius: 15,
+        borderRadius: 5,
         // marginVertical: 10,
         // borderRadius: 10
+    },
+
+    actionsContainer:{
+        display: 'flex',
+        flexDirection: 'row-reverse',
+        paddingBottom: 20,  
+        
+    },
+
+
+    iconsContainer:{
+        display: 'flex',
+        flexDirection: 'row',
+        
+    },
+
+    icon:{
+        paddingRight: 20,
+        // cursor: 'pointer'
+        
+    },
+
+    lastIcon:{
+        paddingRight: 0,
+        // cursor: 'pointer'
     }
+
 
 })
 

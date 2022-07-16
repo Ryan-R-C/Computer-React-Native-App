@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Linking, TouchableOpacity, View } from 'react-native';
 
-import { Image, Text, SafeAreaView, KeyboardAvoidingView } from 'react-native';
-
+import { Image,  SafeAreaView  } from 'react-native';
+import { AntDesign, Entypo } from '@expo/vector-icons'; 
 import globalStyles from '../../globalStyles';
 
-import Comment from '../../components/Comment';
 import TextFormatedRegular from '../../components/TextFormated';
 import styles from './styles';
 
 
-export default function Posts({ _id, title, summary, media, link, authors}) {
+export default function Posts({ title, media, link  }) {
     return (
       <SafeAreaView
       onPress={() => Linking.canOpenURL('http://google.com')}
@@ -18,11 +17,7 @@ export default function Posts({ _id, title, summary, media, link, authors}) {
           globalStyles.postBox
       }
       >
-      {/* <Text style={{color: 'blue'}}
-        onPress={() => Linking.openURL('http://google.com')}
-        >
-        Google
-      </Text> */}        
+
       <TouchableOpacity
       onPress={() => Linking.openURL(link)}
       >
@@ -42,15 +37,6 @@ export default function Posts({ _id, title, summary, media, link, authors}) {
       >
         { title }
       </TextFormatedRegular>
-            {/*
-      <TextFormatedRegular
-        style={
-          globalStyles.text
-        }
-      >
-        { summary }
-      </TextFormatedRegular> */}
-      {/* <Comment /> */}
      </View>
 
       <TextFormatedRegular
@@ -58,9 +44,26 @@ export default function Posts({ _id, title, summary, media, link, authors}) {
             globalStyles.text
           }
         >
-     { authors.map(
-            author => <TextFormatedRegular>{author}</TextFormatedRegular>
-          ) }
+        <View
+        style={styles.actionsContainer} 
+        >
+          <View
+          style={styles.iconsContainer}
+          >
+            <TouchableOpacity style={styles.icon}>
+              <AntDesign  name="hearto" size={24} color="white" />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.icon}>
+              <AntDesign  name="sharealt" size={24} color="white" />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.lastIcon}>
+              <Entypo  name="dots-three-vertical" size={24} color="white" />
+            </TouchableOpacity>
+          
+          </View>
+        </View>
         </TextFormatedRegular>
 
 
