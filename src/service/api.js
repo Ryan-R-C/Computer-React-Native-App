@@ -6,11 +6,11 @@ curl -XGET 'https://api.newscatcherapi.com/v2/search?q=Tesla' -H 'x-api-key: you
 */
 
 export const baseUrl = `https://api.newscatcherapi.com/v2/`;
-export const apiKey = `19f9l4aMnYHFlIpSnRtyHADTdpfDdWh7olGxZJOiCJc`;
+export const apiKey = `--OpI3FnWHfGu_ZQ88iiKVoEqcHssuX9E2vteNce3DQ`;
 
 const api = axios.create({
     baseURL: baseUrl,
-    timeout: 5000,
+    timeout: 100000,
     headers: {
         'x-api-key': apiKey
     }
