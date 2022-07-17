@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.2",
+    "@react-navigation/bottom-tabs": "^6.2.0",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
     "axios": "^0.25.0",
+    "caniuse-lite": "^1.0.30001367",
     "expo": "~44.0.0",
     "expo-font": "~10.0.4",
     "expo-status-bar": "~1.2.0",
@@ -22,8 +26,10 @@
     "react-native": "0.64.3",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-share": "^7.6.6",
     "react-native-vector-icons": "^9.0.0",
     "react-native-web": "0.17.1",
+    "react-web-share": "^1.1.6",
     "reactstrap": "^9.0.1"
   },
   "devDependencies": {
