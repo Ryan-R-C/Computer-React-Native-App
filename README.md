@@ -1,10 +1,10 @@
 # Computer React Native App
 
 
-<a href="https://google.com/" rel="image link">![Foo](https://i.ibb.co/t8bsQsf/Screenshot-from-2022-07-16-18-31-38.png)
+<a href="https://ryan-news-react-app.netlify.app/" rel="image link">![Foo](https://i.ibb.co/t8bsQsf/Screenshot-from-2022-07-16-18-31-38.png)
 </a>
 
-<a href="">
+<a href="https://ryan-news-react-app.netlify.app/" width="100%">
     <div align="center" width="100%">
       <div style="display: flex;">
         <img width="33%" src="https://i.ibb.co/2SXV5K5/Whats-App-Image-2022-07-16-at-21-36-36.jpg" style="vertical-align: top;" />
