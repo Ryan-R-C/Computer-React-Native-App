@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
         
     },
 
+    clipAdvice:{
+        
+
+    },
 
 
     iconsContainer:{

@@ -28,6 +28,7 @@ const globalStyles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#0E1220',
         width: '100%',
+        minHeight: windowHeight,
     },
 
     postBox: {
